@@ -37,8 +37,8 @@ class _DashboardState extends State<Dashboard> {
     email: "maquina_de_fuego@example.com",
     phone: "123-456-7890",
     address: "123 Calle Principal, Ciudad ABC",
-    ssn: "123-45-6789",
-    dateofbirth: "01/01/1980",
+    ssn: "xxx-xx-6789",
+    dateofbirth: "12/11/1999",
     additionalNumbers: additionalNumbers,
     accountStatus: true,
     leftMessages: 5,
@@ -52,9 +52,9 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Soft Collection'),
+        title: const Text('Soft Collection', style: TextStyle(color: Colors.black),),
         centerTitle: true,
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.grey,
       ),
         body: Column(
           children: [
@@ -74,7 +74,7 @@ class _DashboardState extends State<Dashboard> {
       );
   }
 
-  GeneralCustInformation customer1 = GeneralCustInformation(bankName: "Banco del Futuro", deliquencyStatus: "Al corriente", storeName: "Tienda XYZ", 
+  GeneralCustInformation customer1 = GeneralCustInformation(bankName: "Banco del Futuro", deliquencyStatus: "Al corriente", storeName: "Victoria's Secret", 
   accountID: 123456, balance: 9876.54,);
 
 
