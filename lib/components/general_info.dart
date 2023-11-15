@@ -15,7 +15,7 @@ class _GeneralInfoState extends State<GeneralInfo> {
   Widget build(BuildContext context) {
     return Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding: const EdgeInsets.all(30.0),
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.grey,
