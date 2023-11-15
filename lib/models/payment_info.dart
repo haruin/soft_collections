@@ -1,4 +1,4 @@
-class PaymentInformation{
+class PaymentInfo{
 
   String cardNumber;
   String checkingAccountNumber;
@@ -9,7 +9,7 @@ class PaymentInformation{
   DateTime entryDate = DateTime.now();
   String sentPaymentMethod;
 
-  PaymentInformation({
+  PaymentInfo({
 
     required this.cardNumber,
     required this.checkingAccountNumber,
