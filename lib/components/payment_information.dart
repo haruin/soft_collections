@@ -11,6 +11,7 @@ class _PaymentInformationState extends State<PaymentInformation> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
+            flex: 2,
             child: Row(
               children: [
                 Expanded(

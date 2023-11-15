@@ -11,6 +11,7 @@ class _LastActivityCompState extends State<LastActivityComp> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
+            flex: 2,
             child: Row(
               children: [
                 Expanded(

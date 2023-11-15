@@ -14,56 +14,72 @@ class _CustomerInfoAndAdditionalNumbersState extends State<CustomerInfoAndAdditi
   @override
   Widget build(BuildContext context) {
     return Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(
-                  child: Container(
-                    decoration: myBoxDecoration(),
-                    child: Column(
-                      children: [
-                        Text('Nombre: ${widget.customer1Info.name}'),
-                        Text('Email: ${widget.customer1Info.email}'),
-                        Text('Telefono: ${widget.customer1Info.phone}'),
-                        Text('Direccion: ${widget.customer1Info.address}'),
-                        Text('SSN: ${widget.customer1Info.ssn}'),
-                        Text('Fecha de Nacimiento: ${widget.customer1Info.dateofbirth}'),
-                      ],
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            flex: 3,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 30.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  // Customer Info
+                  Expanded(
                     child: Container(
+                      padding: EdgeInsets.all(10.0),
                       decoration: myBoxDecoration(),
                       child: Column(
-                            children: [
-                              Text('Numeros Adicionales'),
-                              Text('Valido: ${widget.customer1Info.additionalNumbers.valid}'),
-                              Text('Posible: ${widget.customer1Info.additionalNumbers.possible}'),
-                              Text('No Llamar: ${widget.customer1Info.additionalNumbers.doNotCall}'),
-                              Text('Restricciones de Horario: ${widget.customer1Info.additionalNumbers.hourRestrictions}'),
-                              Text('Restricciones de Dia: ${widget.customer1Info.additionalNumbers.dayRestrictions}'),
-                            ],
-                          ),
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text('Nombre: ${widget.customer1Info.name}', style: style,),
+                          Text('Email: ${widget.customer1Info.email}', style: style,),
+                          Text('Telefono: ${widget.customer1Info.phone}', style: style,),
+                          Text('Direccion: ${widget.customer1Info.address}', style: style,),
+                          Text('SSN: ${widget.customer1Info.ssn}', style: style,),
+                          Text('Fecha de Nacimiento: ${widget.customer1Info.dateofbirth}', style: style,),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Container(
-                    decoration: myBoxDecoration(),
-                    child: Column(
-                      children: [
-                        Text('Estado de Cuenta: ${widget.customer1Info.accountStatus ? 'Activo' : 'Inactivo'}'),
-                        Text('Mensajes de Voz: ${widget.customer1Info.leftMessages}'),
-                        Text('Contactos con el cliente: ${widget.customer1Info.lastContact}'),
-                        Text('ID de Cuenta: ${widget.customer1Info.accountID}'),
-                      ],
+                  // Additional Numbers
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Container(
+                        padding: EdgeInsets.all(10.0),
+                        decoration: myBoxDecoration(),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Text('Numeros Adicionales', style: style,),
+                                Text('Valido: ${widget.customer1Info.additionalNumbers.valid}', style: style,),
+                                Text('Posible: ${widget.customer1Info.additionalNumbers.possible}', style: style,),
+                                Text('No Llamar: ${widget.customer1Info.additionalNumbers.doNotCall}', style: style,),
+                                Text('Restricciones de Horario: ${widget.customer1Info.additionalNumbers.hourRestrictions}', style: style,),
+                                Text('Restricciones de Dia: ${widget.customer1Info.additionalNumbers.dayRestrictions}', style: style,),
+                              ],
+                            ),
+                      ),
                     ),
                   ),
-                )
-              ],
+                  // Account Status
+                  Expanded(
+                    child: Container(
+                      padding: EdgeInsets.all(10.0),
+                      decoration: myBoxDecoration(),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text('Estado de Cuenta: ${widget.customer1Info.accountStatus ? 'Activo' : 'Inactivo'}', style: style,),
+                          Text('Mensajes de Voz: ${widget.customer1Info.leftMessages}', style: style,),
+                          Text('Contactos con el cliente: ${widget.customer1Info.lastContact}', style: style,),
+                          Text('ID de Cuenta: ${widget.customer1Info.accountID}', style: style,),
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
           );
   }
@@ -71,13 +87,20 @@ class _CustomerInfoAndAdditionalNumbersState extends State<CustomerInfoAndAdditi
   BoxDecoration myBoxDecoration(){
 
     return BoxDecoration(
-      border: Border.all(
-        color: Colors.black,
-        width: 1,
-      ),
-      borderRadius: BorderRadius.circular(12),
+      color: Colors.grey,
+                  border: Border.all(
+                    color: Colors.black,
+                    width: 1,
+                  ),
+                  borderRadius: BorderRadius.circular(12),
     );
   }
+
+  TextStyle style = TextStyle(
+    color: Colors.black,
+  );
+
+  TextAlign textAlign = TextAlign.center;
 
 }
 

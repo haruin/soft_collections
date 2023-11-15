@@ -14,6 +14,7 @@ class _GeneralInfoState extends State<GeneralInfo> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
+            flex: 2,
             child: Padding(
               padding: const EdgeInsets.all(30.0),
               child: Container(

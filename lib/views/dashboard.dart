@@ -29,7 +29,7 @@ class _DashboardState extends State<Dashboard> {
     possible: "123-456-7890",
     doNotCall: "123-456-7890",
     hourRestrictions: "9am-5pm",
-    dayRestrictions: "Jueves, Viernes y Domingo",
+    dayRestrictions: "J, V y D",
   );
     
     customer1Info = Customerinfo(
@@ -43,7 +43,7 @@ class _DashboardState extends State<Dashboard> {
     accountStatus: true,
     leftMessages: 5,
     lastContact: 10,
-    accountID: 123456,
+    accountID: 231616512,
   );
 
   }
