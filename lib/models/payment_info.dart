@@ -1,3 +1,7 @@
+/// Model class for payment information
+/// This model is used in the payment page.
+/// This model contains the card number, checking account number, payment method, 
+/// expiry date, amount, payment date, entry date, and sent payment method.
 class PaymentInformation{
 
   String cardNumber;

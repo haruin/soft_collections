@@ -1,3 +1,8 @@
+/// Model for client data
+/// Used for parsing client data
+/// Contains:
+/// * CustomerInfo class
+/// * AdditionalNumbers class
 class Customerinfo
 {
 
