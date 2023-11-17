@@ -1,20 +1,19 @@
-class SystemnNotes{
+class SystemNotes{
   
-  String callType;
-  DateTime callDate;
-  String conversationType;
-  String callDuration;
-  String contactComunicationMethod;
-  String codeType;
+  String? callType; // Inbound or Outbound
+  DateTime? callDate;
+  String? conversationWith; // Account Holder, Authorized User, Third Party
+  double? amount;
+  String? contactComunicationMethod; // Work Phone, Cell Phone, Home Phone
+  String? codeType;
 
-  SystemnNotes({
-    required this.callType,
-    required this.callDate,
-    required this.conversationType,
-    required this.callDuration,
-    required this.contactComunicationMethod,
-    required this.codeType,
+  SystemNotes({
+    this.callType,
+    this.callDate,
+    this.conversationWith,
+    this.amount,
+    this.contactComunicationMethod,
+    this.codeType,
   });
-
 
 }

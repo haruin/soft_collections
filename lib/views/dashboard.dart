@@ -6,6 +6,9 @@ import 'package:soft_collections/components/payment_information.dart';
 import 'package:soft_collections/components/system_info.dart';
 import 'package:soft_collections/models/datos_cliente.dart';
 import 'package:soft_collections/models/general_cust_info.dart';
+import 'package:soft_collections/models/last_activity.dart';
+import 'package:soft_collections/models/payment_info.dart';
+import 'package:soft_collections/models/system_notes.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -18,10 +21,10 @@ class _DashboardState extends State<Dashboard> {
 
   late Customerinfo customer1Info;
   late AdditionalNumbers additionalNumbers;
+  List <PaymentInfo> paymentInfoList = [];
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     additionalNumbers = AdditionalNumbers(
@@ -46,6 +49,8 @@ class _DashboardState extends State<Dashboard> {
     accountID: 231616512,
   );
 
+   paymentInfoList =  [paymentInfo, paymentInfo2,];
+
   }
 
   @override
@@ -56,27 +61,67 @@ class _DashboardState extends State<Dashboard> {
         centerTitle: true,
         backgroundColor: Colors.grey,
       ),
-        body: Column(
-          children: [
-              
-            // GeneralInfo
-            GeneralInfo(generalCustInformation: customer1,),
-            // CustomerInfo and AdditionalNumbers
-            CustomerInfoAndAdditionalNumbers(customer1Info: customer1Info,),
-            // Payment Information
-            PaymentInformation(),
-            // System Information
-            SystemInfo(),
-            // Last Activity
-            LastActivityComp(),
-          ],
+        body: SingleChildScrollView(
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Column(
+              children: [
+                  
+                // GeneralInfo
+                GeneralInfo(generalCustInformation: customer1,),
+                // CustomerInfo and AdditionalNumbers
+                CustomerInfoAndAdditionalNumbers(customer1Info: customer1Info,),
+                // Payment Information
+                PaymentInformation(paymentInfoList: [paymentInfo, paymentInfo2],),
+                // System Information
+                SystemInfo(systemNotes: call,),
+                // Last Activity
+                LastActivityComp(lastActivity: lastActivity,),
+              ],
+            ),
+          ),
         ),
       );
   }
 
-  GeneralCustInformation customer1 = GeneralCustInformation(bankName: "Banco del Futuro", deliquencyStatus: "Al corriente", storeName: "Victoria's Secret", 
-  accountID: 123456, balance: 9876.54,);
+  GeneralCustInformation customer1 = GeneralCustInformation(bankName: "Banco del Futuro", deliquencyStatus: "Al corriente", 
+  storeName: "Victoria's Secret", accountID: 123456, balance: 9876.54,);
 
+  PaymentInfo paymentInfo = PaymentInfo(
+    paymentMethod: "Tarjeta de Debito",
+    cardNumber: "xxxxxxxxxxxx6881",
+    entryDate: DateTime.now(),
+    amount: 1234.56,
+    paymentDate: DateTime.now(),
+    sentPaymentMethod: "Pago en Tienda",
+    checkingAccountNumber: "xxxxxxxx8186",
+    expiryDate: DateTime.now(),
+    
+  );
 
+  PaymentInfo paymentInfo2 = PaymentInfo(
+    paymentMethod: "Cuenta de Cheques",
+    cardNumber: "xxxxxxxxxxxx6881",
+    entryDate: DateTime.now(),
+    amount: 3556.56,
+    paymentDate: DateTime.now(),
+    sentPaymentMethod: "Pago en pagina web",
+    checkingAccountNumber: "xxxxxxxx8186",
+    expiryDate: DateTime.now(),
+    
+  );
+
+  SystemNotes call = SystemNotes();
+
+  LastActivity lastActivity = LastActivity(
+    refusal: 1,
+    promises: 2,
+    brokenPromises: 3,
+    letterSent: true,
+    returnMail: false,
+    reageElegible: true,
+    hardshipElegible: false,
+  );
 
 } 
